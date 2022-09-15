@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\EquipesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(EquipesController::class)->group(function () {
+    Route::get('/equipes', 'index')->name("equipes");
+    Route::get('/equipes/create', 'create')->name("equipescreate");
+    Route::post('/equipes/create', 'store');
 });
