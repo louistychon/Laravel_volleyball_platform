@@ -25,7 +25,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -38,7 +39,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -51,7 +53,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -64,7 +67,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -77,7 +81,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -90,7 +95,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -103,7 +109,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -116,7 +123,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -129,7 +137,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -142,7 +151,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()
@@ -155,7 +165,8 @@ class JoueurSeeder extends Seeder
                 'email' => Faker::create()->email,
                 'genre' => rand(0,1),
                 'pays' => Faker::create()->country,
-                'photo_id' => rand(1,3),
+                'photos_id' => rand(1,3),
+                'roles_id' => rand(1,3),
                 'equipes_id' => rand(1,3),
                 'updated_at' => now(),
                 'created_at' => now()

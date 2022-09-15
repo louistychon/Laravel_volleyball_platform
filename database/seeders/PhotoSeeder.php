@@ -15,7 +15,7 @@ class PhotoSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('photo')->insert([
+        DB::table('photos')->insert([
             ['src' => 'dsqkdqsjdkl',
             'updated_at' => now(),
             'created_at' => now()],
@@ -25,7 +25,7 @@ class PhotoSeeder extends Seeder
             ['src' => 'dsqklqksdjkqls',
             'updated_at' => now(),
             'created_at' => now()],
-            ['src' => 'dqskdqskldqskj', 
+            ['src' => 'dqskdqskldqskj',
             'updated_at' => now(),
             'created_at' => now()],
          ]);

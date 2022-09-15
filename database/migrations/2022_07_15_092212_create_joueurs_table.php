@@ -22,11 +22,14 @@ return new class extends Migration
             $table->string('email');
             $table->boolean('genre');
             $table->string('pays');
-            $table->foreignId('photo_id')->references('id')
-            ->on('photo')
+            $table->foreignId('photos_id')->references('id')
+            ->on('photos')
             ->onDelete('cascade');
             $table->foreignId('equipes_id')->references('id')
             ->on('equipes')
+            ->onDelete('cascade');
+            $table->foreignId('roles_id')->references('id')
+            ->on('roles')
             ->onDelete('cascade');
             $table->timestamps();
         });

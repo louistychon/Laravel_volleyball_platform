@@ -14,4 +14,9 @@ class Equipes extends Model
     {
         return $this->belongsTo(Continents::class, 'continents_id', 'id');
     }
+
+    public function joueur()
+    {
+        return $this->belongsTo(Joueur::class, 'joueur_id', 'id');
+    }
 }
