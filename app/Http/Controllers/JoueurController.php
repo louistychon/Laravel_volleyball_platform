@@ -8,6 +8,7 @@ use App\Models\Equipes;
 use App\Models\Photo;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class JoueurController extends Controller
 {
@@ -28,6 +29,12 @@ class JoueurController extends Controller
 
     public function store(Request $request)
     {
+        
+        $photo = new Photo();
+        Storage::put('public/img/', $request->file('img'));
+        $photo->src = $request->file('img')->hashName();
+        $photo->save();
+
         $store = new Joueur();
         $store->nom = $request->nom;
         $store->prenom = $request->prenom;
@@ -36,7 +43,7 @@ class JoueurController extends Controller
         $store->genre = $request->genre;
         $store->email = $request->email;
         $store->pays = $request->pays;
-        $store->photos_id = $request->photos_id;
+        $store->photos_id = $photo->id;
         $store->equipes_id = $request->equipes_id;
         $store->roles_id = $request->roles_id;
         $store->save();
@@ -58,6 +65,14 @@ class JoueurController extends Controller
     public function update(Request $request, $id)
     {
         $update = Joueur::find($id);
+        $photo = Photo::find($update->photos_id);
+        if ($request->file('img') != null) {
+            Storage::delete('public/img/', $photo->src);
+            Storage::put('public/img/', $request->file('img'));
+            $photo->src = $request->file('img')->hashName();
+            $photo->save();
+        }
+
         $update->nom = $request->nom;
         $update->prenom = $request->prenom;
         $update->age = $request->age;
@@ -65,14 +80,16 @@ class JoueurController extends Controller
         $update->email = $request->email;
         $update->genre = $request->genre;
         $update->pays = $request->pays;
-        $update->photos_id = $request->photos_id;
+        $update->photos_id = $photo->id;
         $update->roles_id = $request->roles_id;
         $update->save();
+
         return redirect()->back();
     }
 
-    public function destroy(Joueur $joueur)
+    public function destroy($id)
     {
-        //
+        Joueur::find($id)->delete();
+        return redirect()->back();
     }
 }

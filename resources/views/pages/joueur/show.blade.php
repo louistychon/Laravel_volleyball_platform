@@ -28,7 +28,7 @@
         <input value={{ $show->roles_id }} name="roles_id">
         <label for="">Photo : </label>
         <input value={{$show->photos_id}} name="photos_id" hidden>
-        <img src="{{ $show->photo->src}}">
+        <img src="{{asset('storage/img/'.$show->photo->src)}}">
         <label>Nouvelle photo: </label>
         <input type="file" id="src" name="src">
         <button type="submit"

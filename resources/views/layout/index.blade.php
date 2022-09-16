@@ -7,7 +7,7 @@
     <title>Document</title>
     @vite("resources/css/app.css")
 </head>
-<body>
+<body class='w-3/4 m-auto'>
     @include("partial.header")
     @yield("content")
     @include("partial.footer")

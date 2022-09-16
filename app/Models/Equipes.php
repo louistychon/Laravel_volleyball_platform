@@ -17,6 +17,6 @@ class Equipes extends Model
 
     public function joueur()
     {
-        return $this->belongsTo(Joueur::class, 'joueur_id', 'id');
+        return $this->belongsTo(Joueur::class, 'joueurs_id', 'id');
     }
 }

@@ -38,7 +38,7 @@ class EquipesController extends Controller
     public function show($id)
     {
         $show = Equipes::find($id);
-        $joueurs = Joueur::all()->where('equipes_id', '=', $show->id);
+        $joueurs = Joueur::all()->where('equipes_id', '=', $id);
         return view('pages.equipe.show', compact('show', 'joueurs'));
     }
 
@@ -58,8 +58,10 @@ class EquipesController extends Controller
         return redirect()->back();
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        //
+        $todelete = Equipes::find($id);
+        $todelete->delete();
+        return redirect()->back();
     }
 }
