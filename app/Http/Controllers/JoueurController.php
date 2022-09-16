@@ -55,9 +55,20 @@ class JoueurController extends Controller
         //
     }
 
-    public function update(UpdateJoueurRequest $request, Joueur $joueur)
+    public function update(Request $request, $id)
     {
-        //
+        $update = Joueur::find($id);
+        $update->nom = $request->nom;
+        $update->prenom = $request->prenom;
+        $update->age = $request->age;
+        $update->telephone = $request->telephone;
+        $update->email = $request->email;
+        $update->genre = $request->genre;
+        $update->pays = $request->pays;
+        $update->photos_id = $request->photos_id;
+        $update->roles_id = $request->roles_id;
+        $update->save();
+        return redirect()->back();
     }
 
     public function destroy(Joueur $joueur)
