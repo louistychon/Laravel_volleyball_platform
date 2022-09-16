@@ -1,56 +1,56 @@
 @extends('layout.index')
 @section('content')
     <h1 class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">Entrez un nouveau joueur !</h1>
-    <form action="/joueurs/create" method="post" enctype="multipart/form-data" class="p-4 m-4 text-center rounded-lg">
+    <form action="/joueurs/create" method="post" enctype="multipart/form-data" class="p-4 m-4 rounded-lg max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
         @csrf
-        <label class="text-black">Nom : </label>
+        <label class="text-gray-700 dark:text-gray-200">Nom : </label>
         <input
-            class="block m-auto py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             type="text" name="nom" placeholder="nom">
-        <label class="text-black">Prenom : </label>
+        <label class="text-gray-700 dark:text-gray-200">Prenom : </label>
         <input
-            class="block m-auto py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             type="text" name="prenom" placeholder="prenom">
-        <label class="text-black">Age : </label>
+        <label class="text-gray-700 dark:text-gray-200">Age : </label>
         <input type="number"
-            class="block m-auto py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             type="text" name="age" placeholder="age">
-        <label class="text-black">Tel : </label>
+        <label class="text-gray-700 dark:text-gray-200">Tel : </label>
         <input
-            class="block m-auto py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             type="phone" name="telephone" placeholder="telephone">
-        <label class="text-black">email : </label>
+        <label class="text-gray-700 dark:text-gray-200">email : </label>
         <input
-            class="block m-auto py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             type="email" name="email" placeholder="email">
-        <label class="text-black">pays : </label>
+        <label class="text-gray-700 dark:text-gray-200">pays : </label>
         <input
-            class="block m-auto py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             type="phone" name="pays" placeholder="pays">
-        <fieldset>
-            <legend>Genre :</legend>
+        <fieldset class="flex justify-center">
+            <legend class="text-gray-700 dark:text-gray-200">Genre :</legend>
             <div>
-                <input type="radio" id="homme" value="0" name="genre" checked>
+                <input type="radio" id="homme" value="0" name="genre" class="m-5" checked>
                 <label for="homme" class="text-black">Homme</label>
             </div>
             <div>
-                <input type="radio" id="femme" value="1" name="genre">
+                <input type="radio" id="femme" value="1" name="genre" class="m-5">
                 <label for="femme" class="text-black">Femme</label>
             </div>
         </fieldset>
 
-        <label for="roles_id" class="text-white">Role : </label>
-        <select name="roles_id" id="roles_id" class="border">
+        <label for="roles_id" class="text-gray-700 dark:text-gray-200">Role : </label>
+        <select name="roles_id" id="roles_id" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
             @foreach ($roles as $role)
                 <option value="{{ $role->id }}">{{ $role->nom }}</option>
             @endforeach
         </select>
 
-        <label for="img">Image</label>
-        <input type="file" id="img" name="img">
+        <label for="img" class="text-gray-700 dark:text-gray-200">Image</label>
+        <input type="file" id="img" name="img" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
 
-        <label for="equipes_id" class="text-white">Equipe : </label>
-        <select name="equipes_id" id="equipes_id" class="border">
+        <label for="equipes_id" class="text-gray-700 dark:text-gray-200">Equipe : </label>
+        <select name="equipes_id" id="equipes_id" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
             <option value={{ null }}>Select</option>
             @foreach ($equipes as $equipe)
                 <option value="{{ $equipe->id }}">{{ $equipe->nom }}</option>
@@ -58,6 +58,7 @@
         </select>
 
         <button type="submit"
-            class="m-4 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Enregistrer</button>
+            class="my-4 px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Enregistrer</button>
     </form>
+
 @endsection

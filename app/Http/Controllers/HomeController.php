@@ -15,8 +15,8 @@ class HomeController extends Controller
     {
         $allequipes = Equipes::all();
         $alljoueurs = Joueur::all();
-        $quatrejoueurssansequipe = Joueur::where('equipes_id', '=', null)->get();
-        $quatrejoueursavecequipe = Joueur::where('equipes_id', '!=', null)->get();
+        $quatrejoueurssansequipe = Joueur::where('equipes_id', '=', null)->take(4)->get();
+        $quatrejoueursavecequipe = Joueur::where('equipes_id', '!=', null)->take(4)->get();
         $allequipes_europe = Equipes::where('continents_id', '=', 4)->get();
         $allequipes_hors_europe = Equipes::where('continents_id', '!=', 4)->get();
         $cinq_joueuses_random = Joueur::where('genre', '=', 1)->where('equipes_id', '!=', null)->take(5)->get();
