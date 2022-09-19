@@ -29,7 +29,7 @@ class JoueurController extends Controller
 
     public function store(Request $request)
     {
-        
+
         $photo = new Photo();
         Storage::put('public/img/', $request->file('img'));
         $photo->src = $request->file('img')->hashName();
@@ -54,7 +54,8 @@ class JoueurController extends Controller
     public function show($id)
     {
         $show = Joueur::find($id);
-        return view('pages.joueur.show', compact('show'));
+        $roles = Role::all();
+        return view('pages.joueur.show', compact('show', 'roles'));
     }
 
     public function edit(Joueur $joueur)
@@ -89,7 +90,10 @@ class JoueurController extends Controller
 
     public function destroy($id)
     {
-        Joueur::find($id)->delete();
+        $todel = Joueur::find($id);
+        Storage::delete('public/img/' . $todel->photo->src);
+        $todel->photo()->delete();
+        $todel->delete();
         return redirect()->back();
     }
 }

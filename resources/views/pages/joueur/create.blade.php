@@ -1,34 +1,34 @@
 @extends('layout.index')
 @section('content')
     <h1 class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">Entrez un nouveau joueur !</h1>
-    <form action="/joueurs/create" method="post" enctype="multipart/form-data" class="p-4 m-4 rounded-lg max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
+    <form action="/joueurs/create" method="post" enctype="multipart/form-data" class="p-4 m-4 rounded-lg max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md">
         @csrf
-        <label class="text-gray-700 dark:text-gray-200">Nom : </label>
+        <label class="text-gray-700 ">Nom : </label>
         <input
-            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring"
             type="text" name="nom" placeholder="nom">
-        <label class="text-gray-700 dark:text-gray-200">Prenom : </label>
+        <label class="text-gray-700 ">Prenom : </label>
         <input
-            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring"
             type="text" name="prenom" placeholder="prenom">
-        <label class="text-gray-700 dark:text-gray-200">Age : </label>
+        <label class="text-gray-700 ">Age : </label>
         <input type="number"
-            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring"
             type="text" name="age" placeholder="age">
-        <label class="text-gray-700 dark:text-gray-200">Tel : </label>
+        <label class="text-gray-700 ">Tel : </label>
         <input
-            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring"
             type="phone" name="telephone" placeholder="telephone">
-        <label class="text-gray-700 dark:text-gray-200">email : </label>
+        <label class="text-gray-700 ">email : </label>
         <input
-            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring"
             type="email" name="email" placeholder="email">
-        <label class="text-gray-700 dark:text-gray-200">pays : </label>
+        <label class="text-gray-700 ">pays : </label>
         <input
-            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring"
             type="phone" name="pays" placeholder="pays">
         <fieldset class="flex justify-center">
-            <legend class="text-gray-700 dark:text-gray-200">Genre :</legend>
+            <legend class="text-gray-700 ">Genre :</legend>
             <div>
                 <input type="radio" id="homme" value="0" name="genre" class="m-5" checked>
                 <label for="homme" class="text-black">Homme</label>
@@ -39,18 +39,18 @@
             </div>
         </fieldset>
 
-        <label for="roles_id" class="text-gray-700 dark:text-gray-200">Role : </label>
-        <select name="roles_id" id="roles_id" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+        <label for="roles_id" class="text-gray-700 ">Role : </label>
+        <select name="roles_id" id="roles_id" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring">
             @foreach ($roles as $role)
                 <option value="{{ $role->id }}">{{ $role->nom }}</option>
             @endforeach
         </select>
 
-        <label for="img" class="text-gray-700 dark:text-gray-200">Image</label>
-        <input type="file" id="img" name="img" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+        <label for="img" class="text-gray-700 ">Image</label>
+        <input type="file" id="img" name="img" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring">
 
-        <label for="equipes_id" class="text-gray-700 dark:text-gray-200">Equipe : </label>
-        <select name="equipes_id" id="equipes_id" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+        <label for="equipes_id" class="text-gray-700 ">Equipe : </label>
+        <select name="equipes_id" id="equipes_id" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring">
             <option value={{ null }}>Select</option>
             @foreach ($equipes as $equipe)
                 <option value="{{ $equipe->id }}">{{ $equipe->nom }}</option>

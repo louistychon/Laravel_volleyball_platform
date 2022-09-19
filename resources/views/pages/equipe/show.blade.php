@@ -12,7 +12,7 @@
         <input value={{ $show->pays }} name="pays">
         <input value={{ $show->continent->id }} name="continents_id" hidden>
         <button type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Enregistrer</button>
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Enregistrer</button>
     </form>
 
     <h1 class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">
@@ -22,8 +22,8 @@
         @foreach ($joueurs as $joueur)
             <div class="flex mb-4">
                 <a
-                    class="block mt-4 p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    class="block mt-4 p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                         {{ $joueur->nom }} {{ $joueur->prenom }} -> {{ $joueur->age }} ans</h5>
                     <ul class="text-black">
                         <li>Role ->{{ $joueur->role->nom }}</li>
