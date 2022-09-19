@@ -15,13 +15,17 @@ class HomeController extends Controller
     {
         $allequipes = Equipes::all();
         $alljoueurs = Joueur::all();
+        $allequipes_remplies = Equipes::all()->where('nombre', '=', 10);
+        $allequipes_non_remplies = Equipes::all()->where('nombre', '!=', 10);
+        $deuxequipes_non_remplies = Equipes::where('nombre', '!=', 10)->take(2)->get();
+
         $quatrejoueurssansequipe = Joueur::where('equipes_id', '=', null)->take(4)->get();
         $quatrejoueursavecequipe = Joueur::where('equipes_id', '!=', null)->take(4)->get();
         $allequipes_europe = Equipes::where('continents_id', '=', 4)->get();
         $allequipes_hors_europe = Equipes::where('continents_id', '!=', 4)->get();
         $cinq_joueuses_random = Joueur::where('genre', '=', 1)->where('equipes_id', '!=', null)->take(5)->get();
         $cinq_joueurs_random = Joueur::where('genre', '=', 0)->where('equipes_id', '!=', null)->take(5)->get();
-        return view('pages.home', compact('allequipes', 'alljoueurs', 'quatrejoueurssansequipe', 'quatrejoueursavecequipe', 'allequipes_europe', 'allequipes_hors_europe', 'cinq_joueuses_random', 'cinq_joueurs_random'));
+        return view('pages.home', compact('allequipes', 'alljoueurs', 'quatrejoueurssansequipe', 'quatrejoueursavecequipe', 'allequipes_europe', 'allequipes_hors_europe', 'cinq_joueuses_random', 'cinq_joueurs_random', 'deuxequipes_non_remplies', 'allequipes_remplies'));
     }
 
     public function create()

@@ -47,7 +47,11 @@ class JoueurController extends Controller
         $store->equipes_id = $request->equipes_id;
         $store->roles_id = $request->roles_id;
         $store->save();
-        return redirect()->back();
+
+        $equipes = Equipes::find($request->equipes_id);
+        $equipes->nombre = $request->nombre += 1;
+
+        return redirect("/joueurs/create")->with('success', 'Joueur correctement créé ! félicitations');
     }
 
 

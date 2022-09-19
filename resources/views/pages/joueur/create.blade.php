@@ -1,5 +1,7 @@
 @extends('layout.index')
 @section('content')
+
+@include('layout.flash')
     <h1 class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">Entrez un nouveau joueur !</h1>
     <form action="/joueurs/create" method="post" enctype="multipart/form-data" class="p-4 m-4 rounded-lg max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md">
         @csrf

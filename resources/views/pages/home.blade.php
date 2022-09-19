@@ -1,10 +1,13 @@
 @extends('layout.index')
 @section('content')
+
+
     <h1 class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">Équipes remplies
     </h1>
+
+
     <div class="grid grid-cols-4 gap-5  gap-5 ">
-        @foreach ($allequipes as $equipe)
-        @if($equipe->nombre == 10)
+        @foreach ($allequipes_remplies as $equipe)
             <div class="block mt-4 p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">
                 <a href="/equipes/{{ $equipe->id }}/show">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 "> Équipe :
@@ -19,12 +22,11 @@
                     </ul>
                 </a>
             </div>
-            @endif
         @endforeach
     </div>
     <h1 class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">2 équipes non remplies</h1>
     <div class="grid grid-cols-4 gap-5  ">
-        @foreach ($allequipes as $equipe)
+        @foreach ($deuxequipes_non_remplies as $equipe)
             <div class="block mt-4 p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">
                 <a href="/equipes/{{ $equipe->id }}/show">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"> Équipe :
