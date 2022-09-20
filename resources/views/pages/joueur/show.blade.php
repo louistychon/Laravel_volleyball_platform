@@ -57,7 +57,7 @@
         </select>
         <label class="my-4">Photo : </label>
         <input value={{ $show->photos_id }} class="rounded-lg" name="photos_id" hidden>
-        <img src="{{ asset('storage/img/' . $show->photo->src) }}">
+        <img src="{{ asset('storage/img/' . $show->photo->src) }}" class="rounded-lg">
         <label class="my-4">Nouvelle photo: </label>
         <input type="file" id="src" name="src">
         <button type="submit"

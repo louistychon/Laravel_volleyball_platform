@@ -53,7 +53,7 @@
 
         <label for="equipes_id" class="text-gray-700 ">Equipe : </label>
         <select name="equipes_id" id="equipes_id" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:outline-none focus:ring">
-            <option value={{ null }}>Select</option>
+            <option value={{ null }}>Pas d'équipe</option>
             @foreach ($equipes as $equipe)
                 <option value="{{ $equipe->id }}">{{ $equipe->nom }}</option>
             @endforeach

@@ -1,5 +1,6 @@
 @extends('layout.index')
 @section('content')
+<section class="sectionIndexEquipes">
     <h1
     class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">
         Toutes les équipes</h1>
@@ -15,9 +16,9 @@
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"> Équipe :
                     {{ $equipe->nom }}</h5>
                 <ul class="text-black">
-                    <li>->{{ $equipe->ville }}</li>
-                    <li>->{{ $equipe->pays }}</li>
-                    <li>->{{ $equipe->continent->nom }}</li>
+                    <li>>{{ $equipe->ville }}</li>
+                    <li>>{{ $equipe->pays }}</li>
+                    <li>>{{ $equipe->continent->nom }}</li>
                     <button class="block my-5 m-auto focus:outline-none text-white bg-purple-700 hover:bg-red-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">Voir l'équipe</button>
                 </ul>
             </a>
@@ -27,4 +28,6 @@
 
     <a href="{{Route('equipescreate')}}"><button type="button"
         class="block m-auto focus:outline-none text-white bg-purple-700 hover:bg-red-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">Créer une équipe</button></a>
+
+</section>
 @endsection

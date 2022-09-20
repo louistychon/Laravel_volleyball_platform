@@ -42,11 +42,6 @@ class EquipesController extends Controller
         return view('pages.equipe.show', compact('show', 'joueurs'));
     }
 
-    public function edit()
-    {
-        //
-    }
-
     public function update(Request $request, $id)
     {
         $update = Equipes::find($id);

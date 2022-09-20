@@ -6,7 +6,14 @@
 @tailwind utilities;
 
 
-label{
+label {
     margin-bottom: 1vh;
     margin-top: 1vh;
+}
+
+
+.sectionIndexEquipes {
+    background-image: 'public/background-images/sssx.jpg';
+    background-size: 100%;
+    background-repeat: no-repeat;
 }

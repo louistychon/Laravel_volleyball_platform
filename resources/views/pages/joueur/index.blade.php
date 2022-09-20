@@ -15,7 +15,7 @@
                 class="">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 "> Nom :
                     {{ $joueur->nom }}</h5>
-                    <img src={{asset('storage/img/'.$joueur->photo->src)}}>
+                    <img src={{asset('storage/img/'.$joueur->photo->src)}} class="rounded-lg">
                 <ul class="text-black">
                     <li><i class="fa-solid fa-volleyball"></i> {{ $joueur->pays }}</li>
                     <li><i class="fa-solid fa-volleyball"></i> {{ $joueur->age }} ans </li>

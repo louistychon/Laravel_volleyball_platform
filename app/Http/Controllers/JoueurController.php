@@ -28,6 +28,13 @@ class JoueurController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'genre' => 'required',
+            'roles_id' => 'required',
+        ]);
+
 
         $photo = new Photo();
         Storage::put('public/img/', $request->file('img'));
@@ -46,8 +53,6 @@ class JoueurController extends Controller
         $store->equipes_id = $request->equipes_id;
         $store->roles_id = $request->roles_id;
         $store->save();
-
-
         return redirect("/joueurs/create")->with('success', 'Joueur correctement créé ! félicitations');
     }
 

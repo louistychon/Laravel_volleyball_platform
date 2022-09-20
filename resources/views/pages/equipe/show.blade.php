@@ -18,14 +18,15 @@
     <h1 class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">
         Joueurs de l'équipe : </h1>
 
-    <div class="m-4 p-4 flex flex-wrap justify-evenly">
+    <div class="m-4 p-4 grid gap-5 grid-cols-5 ">
         @foreach ($joueurs as $joueur)
-            <div class="flex mb-4">
+            <div class="mb-4">
                 <a
                     class="block mt-4 p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                        {{ $joueur->nom }} {{ $joueur->prenom }} -> {{ $joueur->age }} ans</h5>
+                        {{ $joueur->nom }} {{ $joueur->prenom }}, {{ $joueur->age }} ans</h5>
                     <ul class="text-black">
+                        <img src="{{ asset('storage/img/' . $joueur->photo->src) }}" class="rounded-lg">
                         <li>Role ->{{ $joueur->role->nom }}</li>
                         <li>Pays ->{{ $joueur->pays }}</li>
                         <li>Genre ->
@@ -40,4 +41,5 @@
                 </a>
             </div>
         @endforeach
+        </div>
     @endsection
