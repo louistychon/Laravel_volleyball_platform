@@ -10,7 +10,7 @@
                 <form method="post" action="/joueurs/{{ $joueur->id }}/delete">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" style="color:red;" class="float-right block"><i
+                    <button type="submit" style="color:red;" class="float-right block" title="Supprimer ce joueur"><i
                             class="block text-right fa-solid fa-xmark"></i></button>
                 </form>
                 <a href="/joueurs/{{ $joueur->id }}/show" class="">
