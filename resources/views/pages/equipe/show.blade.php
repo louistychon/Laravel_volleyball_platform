@@ -7,10 +7,10 @@
         class="m-4 p-4 text-2xl tracking-tight leading-none text-black-500">
         @csrf
         @method('PUT')
-        <input value={{ $show->nom }} name="nom">
-        <input value={{ $show->ville }} name="ville">
-        <input value={{ $show->pays }} name="pays">
-        <input value={{ $show->continent->id }} name="continents_id" hidden>
+        <input class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md" value={{ $show->nom }} name="nom">
+        <input class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md" value={{ $show->ville }} name="ville">
+        <input class="block w-full px-4 py-2 my-2 text-gray-700 bg-white border border-gray-200 rounded-md" value={{ $show->pays }} name="pays">
+        <input class="none w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md" value={{ $show->continent->id }} name="continents_id" hidden>
         <button type="submit"
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Enregistrer</button>
     </form>

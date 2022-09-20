@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('continents_id')
             ->references('id')
             ->on('continents');
-            $table->integer('nombre');
+            $table->integer('nombre')->nullable();
             $table->timestamps();
         });
     }

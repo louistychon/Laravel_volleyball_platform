@@ -18,4 +18,9 @@ class Joueur extends Model
     {
         return $this->belongsTo(Photo::class, 'photos_id', 'id');
     }
+
+    public function equipe()
+    {
+        return $this->belongsTo(Equipes::class, 'equipes_id', 'id');
+    }
 }

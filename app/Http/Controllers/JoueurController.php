@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Joueur;
-use App\Http\Requests\UpdateJoueurRequest;
 use App\Models\Equipes;
 use App\Models\Photo;
 use App\Models\Role;
@@ -48,8 +47,6 @@ class JoueurController extends Controller
         $store->roles_id = $request->roles_id;
         $store->save();
 
-        $equipes = Equipes::find($request->equipes_id);
-        $equipes->nombre = $request->nombre += 1;
 
         return redirect("/joueurs/create")->with('success', 'Joueur correctement créé ! félicitations');
     }
@@ -57,14 +54,10 @@ class JoueurController extends Controller
 
     public function show($id)
     {
+        $allequipes = Equipes::all();
         $show = Joueur::find($id);
         $roles = Role::all();
-        return view('pages.joueur.show', compact('show', 'roles'));
-    }
-
-    public function edit(Joueur $joueur)
-    {
-        //
+        return view('pages.joueur.show', compact('show', 'roles', 'allequipes'));
     }
 
     public function update(Request $request, $id)
@@ -85,6 +78,7 @@ class JoueurController extends Controller
         $update->email = $request->email;
         $update->genre = $request->genre;
         $update->pays = $request->pays;
+        $update->equipes_id = $request->equipes_id;
         $update->photos_id = $photo->id;
         $update->roles_id = $request->roles_id;
         $update->save();
