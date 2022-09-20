@@ -11,7 +11,7 @@
 
 <body class='bg-slate-100'>
     @include('partial.header')
-    <main class='w-3/4 m-auto'>
+    <main>
         @yield('content')
     </main>
         @include('partial.footer')

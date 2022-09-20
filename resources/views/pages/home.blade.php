@@ -1,5 +1,6 @@
 @extends('layout.index')
 @section('content')
+<section class="w-3/4 m-auto">
     <h1 class="m-4 p-4 text-2xl font-extrabold tracking-tight leading-none text-black-500">Équipes remplies
     </h1>
     <div class="grid grid-cols-4 gap-5 gap-5 ">
@@ -163,4 +164,5 @@
             </div>
         @endforeach
     </div>
+</section>
 @endsection

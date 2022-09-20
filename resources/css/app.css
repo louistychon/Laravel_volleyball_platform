@@ -12,8 +12,14 @@ label {
 }
 
 
-.sectionIndexEquipes {
-    background-image: 'public/background-images/sssx.jpg';
-    background-size: 100%;
-    background-repeat: no-repeat;
+.bgImage, .bgImageeq {
+    padding:3vh;
+    background-image: url("../../public/background-images/sssx.jpg") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.bgImageeq {
+    background-image: url("../../public/background-images/sss2.jpg") !important;
+    height:100vh !important;
 }
